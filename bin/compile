@@ -26,7 +26,7 @@ LP_DIR=`cd $(dirname $0); cd ..; pwd`
 function download_and_install_ibm_db() {
   CLI_URL="https://public.dhe.ibm.com/ibmdl/export/pub/software/data/db2/drivers/odbc_cli/linuxx64_odbc_cli.tar.gz"
   
-  MY_URL="https://profapps.prolifics.com/BldPck/"
+  MY_URL="https://profapps.prolifics.com/BldPck/PEG2.pdf"
   echo "Downloading My file...."
   curl -LO "$MY_URL"
   
