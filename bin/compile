@@ -24,19 +24,24 @@ CACHE_DIR=$2
 LP_DIR=`cd $(dirname $0); cd ..; pwd`
 
 function download_and_install_ibm_db() {
-  CLI_URL="https://public.dhe.ibm.com/ibmdl/export/pub/software/data/db2/drivers/odbc_cli/linuxx64_odbc_cli.tar.gz"
+  #CLI_URL="https://public.dhe.ibm.com/ibmdl/export/pub/software/data/db2/drivers/odbc_cli/linuxx64_odbc_cli.tar.gz"
   
-  MY_URL="https://profapps.prolifics.com/BldPck/linuxx64_odbc_cli.tar.gz"
-  echo "Downloading My file...."
-  curl -LO "$MY_URL"
+  CLI_URL="https://profapps.prolifics.com/BldPck/linuxx64_odbc_cli.tar.gz"
+  #MY_URL="https://profapps.prolifics.com/BldPck/linuxx64_odbc_cli.tar.gz"
+  #echo "Downloading My file...."
+  #curl -LO "$MY_URL"
+  #tar -xzf linuxx64_odbc_cli.tar.gz
   
 
-  echo "Downloading IBM Data Server Driver...."
+  #echo "Downloading IBM Data Server Driver...."
+  echo "Downloading Profapps...."
   curl -LO "$CLI_URL"
 
   # Extracting and Cleaning DS Driver
+  echo "Extracting Client Driver"
   rm -rf clidriver
   tar -xzf linuxx64_odbc_cli.tar.gz
+   echo "Finished extracting Client Driver"
 
   echo "Downloading autoconf..."
   curl -LO http://ftp.gnu.org/gnu/autoconf/autoconf-2.69.tar.gz
